@@ -2,7 +2,7 @@
 import openai
 
 # Set the API key
-openai.api_key = "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"
+openai.api_key = "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"
 
 # Define the model to use
 model_engine = "text-davinci-003"
@@ -10,24 +10,24 @@ model_engine = "text-davinci-003"
 print("Bienvenue dans le chatbot ChatGPT. Posez-moi une question ou tapez 'exit' pour quitter.")
 
 while True:
-    # Get the user's message
+    # Récupère le message de l'utilisateur
     message = input("Vous : ")
 
-    # Check if the user wants to exit
+    # Regarde si l'utilisateur veut quitter le chat
     if message.lower() == "exit":
         break
 
-    # Generate a response
+    # Génère la réponse
     completion = openai.Completion.create(
         engine=model_engine,
         prompt=message,
-        max_tokens=1024,
+        max_tokens=3900,
         n=1,
         stop=None,
         temperature=0.5,
     )
 
-    # Print the response
+    # Retourne la réponse
     response = completion.choices[0].text
     print("ChatGPT : " + response)
 
